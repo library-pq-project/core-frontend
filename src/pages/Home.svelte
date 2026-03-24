@@ -21,7 +21,7 @@
 </section>
 
 <section class="mb-24">
-    <p class="text-muted font-mono mb-8">Active Courses</p>
+    <p class="text-muted font-mono mb-8 uppercase">Active Courses</p>
 
     <div class="courses-grid">
         {#each { length: 1 }}

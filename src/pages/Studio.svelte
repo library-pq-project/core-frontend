@@ -20,7 +20,7 @@
         <div>
             <IconUpload class="text-muted size-8" />
         </div>
-        <p class="text-2xl font-reading font-bold">
+        <p class="text-2xl font-reading font-bold text-center">
             Drag and Drop Lecture Materials
         </p>
         <p class="max-w-6/12 text-center text-sm text-muted">
@@ -30,7 +30,7 @@
         <button class="btn-outline uppercase"> Browse Local Files </button>
     </div>
 
-    <div class="bg-surface border-border border w-112 p-8 space-y-lg">
+    <div class="bg-surface border-border border max-w-112  lg:w-112 p-8 space-y-lg">
         <div class="flex items-center gap-sm">
             <IconAdjustmentsSpark class="size-6" />
             <p class="uppercase font-semibold text-sm">Generation Parameters</p>

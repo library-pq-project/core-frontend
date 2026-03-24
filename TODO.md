@@ -1,4 +1,5 @@
-- Navbar States
+- Navbar States (DONE)
 - Question View
 - Loading Spinners
 - Modularity
+- Hover States
