@@ -36,7 +36,23 @@ body {
   @apply tracking-wide bg-primary text-background px-4 py-3 inline-flex items-center gap-2 text-sm justify-center;
 }
 
+.btn-ghost {
+  @apply tracking-wide inline-flex items-center gap-2 text-sm justify-center;
+}
+
 select {
   appearance: base-select;
   @apply border px-4 py-2;
+}
+
+input[type=checkbox] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  @apply border border-primary;
+
+  content: url("./assets/check.svg");
+  &:checked {
+    @apply bg-primary transition-colors;
+  }
 }

@@ -63,9 +63,5 @@
         & > * {
             @apply pb-0.5;
         }
-
-        & > .active {
-            @apply text-text border-b-2;
-        }
     }
 </style>

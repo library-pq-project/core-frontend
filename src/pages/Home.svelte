@@ -4,7 +4,9 @@
     import IconCircleCheckFilled from "~icons/tabler/circle-check-filled";
 </script>
 
-<section class="flex flex-col lg:flex-row items-start gap-4 lg:items-end pb-8 mb-8 border-b border-border">
+<section
+    class="flex flex-col lg:flex-row items-start gap-4 lg:items-end pb-8 mb-8 border-b border-border"
+>
     <div class="space-y-4">
         <p class="font-reading text-4xl font-semibold">Good Morning Ezekiel</p>
 
