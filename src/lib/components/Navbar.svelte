@@ -8,20 +8,15 @@
     let isOpen = $state(false);
 </script>
 
-<!--TODO Please Work on navbar switching  -->
 {#snippet links()}
     <li><a href="/studio">Studio</a></li>
     <li><a href="/repo">Repository</a></li>
     <li><a href="/">Home</a></li>
 {/snippet}
-<nav
-    class="flex items-center gap-8 p-4 lg:gap-12 lg:p-8 justify-between md:justify-start"
->
+<nav class="navbar">
     <img src={logo} alt="" class="w-36 lg:w-48" />
 
-    <ul
-        class="links items-center gap-4 lg:gap-8 uppercase tracking-wide hidden md:flex"
-    >
+    <ul class="links horizontal">
         {@render links()}
     </ul>
 
@@ -35,10 +30,7 @@
     </button>
 
     {#if isOpen}
-        <ul
-            transition:fade={{ duration: 75 }}
-            class="fixed text-black bg-background w-full inset-0 flex items-center flex-col text-lg justify-center gap-8 links uppercase"
-        >
+        <ul transition:fade={{ duration: 75 }} class="navbar-full links">
             <li>
                 <button>
                     <IconX
@@ -63,5 +55,17 @@
         & > * {
             @apply pb-0.5;
         }
+    }
+
+    .horizontal {
+        @apply items-center gap-4 lg:gap-8 uppercase tracking-wide hidden md:flex;
+    }
+
+    .navbar {
+        @apply flex items-center gap-8 p-4 lg:gap-12 lg:p-8 justify-between md:justify-start;
+    }
+
+    .navbar-full {
+        @apply fixed text-black bg-background w-full inset-0 flex items-center flex-col text-lg justify-center gap-8  uppercase;
     }
 </style>

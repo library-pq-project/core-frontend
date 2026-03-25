@@ -5,6 +5,6 @@
 </script>
 
 <Navbar />
-<main class="min-h-screen px-8 py-16 lg:px-20 xl:px-40 lg:py-24">
+<main class="min-h-screen px-4 py-16 lg:px-20 xl:px-40 lg:py-24">
   <Router />
 </main>

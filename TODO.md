@@ -2,5 +2,9 @@
 - Question View (DONE)
 - Loading Spinners (DONE)
 - Modularity
+    - Home (DONE)
+    - Question (DONE)
+    - Studio (DONE)
 - Hover States
 - Number of Questions to be generated
+- Current Nav Link
