@@ -5,6 +5,6 @@
     - Home (DONE)
     - Question (DONE)
     - Studio (DONE)
-- Hover States
-- Number of Questions to be generated
+- Hover States (DONE)
+- Number of Questions to be generated (DONE)
 - Current Nav Link

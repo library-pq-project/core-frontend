@@ -5,6 +5,8 @@
 
 
 @theme {
+
+  /* Primary Colors */
   --color-primary: #1B2A4A;
   --color-background: #FDFCFA;
   --color-surface: #FFFFFF;
@@ -12,9 +14,19 @@
   --color-muted: #718096;
   --color-accent: #2B6CB0;
   --color-border: #E2E8F0;
+
+  /* Hover Colors */
+  --color-primary-hover: #2D4069;
+  --color-background-hover: #F5F2ED;
+  --color-accent-hover: #3182CE;
+  --color-surface-hover: #F8FAFC;
+
+  /* Fonts */
   --font-sans: 'Instrument Sans Variable', sans-serif;
   --font-reading: 'Newsreader Variable', serif;
   --font-mono: 'JetBrains Mono Variable', monospace;
+
+  /* Spacing */
   --radius: 2px;
   --spacing-sm: 8px;
   --spacing-md: 24px;
@@ -29,20 +41,21 @@ body {
 }
 
 .btn-outline {
-  @apply font-semibold border px-4 py-2 tracking-wide text-sm items-center;
+  @apply font-semibold border px-4 py-2 tracking-wide text-sm items-center cursor-pointer hover:bg-background-hover transition-colors focus:outline-0 focus:ring-2 focus:ring-offset-1 inline-flex gap-2;
 }
 
 .btn-primary {
-  @apply tracking-wide bg-primary text-background px-4 py-3 inline-flex items-center gap-2 text-sm justify-center;
+  @apply tracking-wide bg-primary text-background px-4 py-3 inline-flex items-center 
+  gap-2 text-sm justify-center hover:bg-primary-hover transition-colors cursor-pointer focus:outline-0 focus:ring-2 focus:ring-primary-hover focus:ring-offset-1;
 }
 
 .btn-ghost {
-  @apply tracking-wide inline-flex items-center gap-2 text-sm justify-center;
+  @apply px-4 py-2 tracking-wide inline-flex items-center gap-2 text-sm justify-center transition-colors hover:bg-background-hover;
 }
 
 select {
   appearance: base-select;
-  @apply border px-4 py-2;
+  @apply border px-4 py-2 focus:outline-0 focus:ring-2 focus:ring-offset-1;
 }
 
 input[type=checkbox] {
@@ -52,6 +65,7 @@ input[type=checkbox] {
   @apply border border-primary;
 
   content: url("./assets/check.svg");
+
   &:checked {
     @apply bg-primary transition-colors;
   }

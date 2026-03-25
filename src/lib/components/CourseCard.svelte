@@ -2,17 +2,13 @@
     import IconTextFilled from "~icons/tabler/file-text-filled";
     import type { Course } from "../utils/types";
 
-    let {course}: {course?: Course} = $props()
+    let { course }: { course?: Course } = $props();
 </script>
 
 <article class="card">
     <div class="card-top">
-        <p class="course-code">
-            BIO 1O1
-        </p>
-        <p class="course-title">
-            Cellular Biology and Genetics
-        </p>
+        <p class="course-code">BIO 1O1</p>
+        <p class="course-title">Cellular Biology and Genetics</p>
         <p class="course-lecturer">Prof E Rosalind</p>
     </div>
 
@@ -23,13 +19,15 @@
         </div>
         <p class="question-number">124 Qs</p>
     </div>
+
+    <a href="/" aria-label="Open Card" class="card-link"> </a>
 </article>
 
 <style>
     @reference "../../app.css";
 
     .card {
-        @apply border border-border max-w-112;
+        @apply border border-border max-w-112 relative hover:-translate-y-1.5 transition-transform;
     }
 
     .card-top {
@@ -58,5 +56,9 @@
 
     .question-number {
         @apply font-bold text-sm font-mono;
+    }
+
+    .card-link {
+        @apply h-full inset-0 w-full absolute;
     }
 </style>

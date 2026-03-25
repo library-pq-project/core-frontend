@@ -11,10 +11,12 @@
 {#snippet links()}
     <li><a href="/studio">Studio</a></li>
     <li><a href="/repo">Repository</a></li>
-    <li><a href="/">Home</a></li>
 {/snippet}
+
 <nav class="navbar">
-    <img src={logo} alt="" class="w-36 lg:w-48" />
+    <a href="/">
+        <img src={logo} alt="" class="w-36 lg:w-48" />
+    </a>
 
     <ul class="links horizontal">
         {@render links()}
@@ -53,7 +55,7 @@
         @apply text-muted;
 
         & > * {
-            @apply pb-0.5;
+            @apply pb-0.5 hover:underline hover:text-text;
         }
     }
 
@@ -62,7 +64,7 @@
     }
 
     .navbar {
-        @apply flex items-center gap-8 p-4 lg:gap-12 lg:p-8 justify-between md:justify-start;
+        @apply flex items-center gap-8 p-4 lg:gap-12 lg:px-8 justify-between md:justify-start border-b border-b-border;
     }
 
     .navbar-full {

@@ -63,6 +63,6 @@
     }
 
     .assessment-list {
-        @apply divide-y-2 divide-border space-y-8 border-t border-border pt-8;
+        @apply divide-y-2 divide-border border-t border-border pt-8;
     }
 </style>

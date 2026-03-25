@@ -35,7 +35,7 @@
     @reference "../../app.css";
     
     .course-info-card {
-        @apply flex flex-col gap-6 pb-8 lg:flex-row items-start justify-between;
+        @apply flex flex-col gap-6 pb-8 md:flex-row items-start justify-between hover:bg-background-hover pt-4 px-4;
     }
 
     .course-title {
