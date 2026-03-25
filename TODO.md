@@ -1,6 +1,6 @@
 - Navbar States (DONE)
 - Question View (DONE)
-- Loading Spinners
+- Loading Spinners (DONE)
 - Modularity
 - Hover States
 - Number of Questions to be generated
