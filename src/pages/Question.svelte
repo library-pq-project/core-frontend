@@ -1,7 +1,7 @@
 <script lang="ts">
     import IconArrowLeft from "~icons/tabler/arrow-left";
 
-    let questionType: "MCQ" | "Essay" = $state("MCQ");
+    let questionType: "MCQ" | "Essay" = $state("Essay");
 </script>
 
 <section class="max-w-3xl mx-auto">

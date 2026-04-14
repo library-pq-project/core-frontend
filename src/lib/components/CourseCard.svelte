@@ -20,7 +20,7 @@
         <p class="question-number">124 Qs</p>
     </div>
 
-    <a href="/" aria-label="Open Card" class="card-link"> </a>
+    <a href="/course" aria-label="Open Card" class="card-link"> </a>
 </article>
 
 <style>
