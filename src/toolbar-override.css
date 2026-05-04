@@ -1,0 +1,10 @@
+@import "./app.css";
+
+.ql-toolbar.ql-snow {
+    @apply border-l-0 border-r-0 border-t-0 border-b;
+}
+
+.ql-container.ql-snow {
+    @apply border-l-0 border-r-0 border-b font-sans h-auto min-h-64 lg:min-h-96 max-h-[600px] lg:text-lg lg:py-4 overflow-y-auto;
+    scrollbar-width: thin;
+}

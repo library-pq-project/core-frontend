@@ -1,7 +1,9 @@
 <script lang="ts">
+    import Editor from "../lib/components/Editor.svelte";
     import IconArrowLeft from "~icons/tabler/arrow-left";
+    import IconFileUploadFilled from "~icons/tabler/file-upload-filled";
 
-    let questionType: "MCQ" | "Essay" = $state("Essay");
+    let questionType: "MCQ" | "Essay" = $state("MCQ");
 </script>
 
 <section class="max-w-3xl mx-auto">
@@ -10,7 +12,9 @@
             ><IconArrowLeft />
             <p>Save & Exit</p></button
         >
-        <p class="font-mono uppercase text-sm md:text-base text-muted">Question 03/10</p>
+        <p class="font-mono uppercase text-sm md:text-base text-muted">
+            Question 03/10
+        </p>
     </div>
 
     <div class="space-y-6 lg:space-y-8">
@@ -24,12 +28,21 @@
             your response. Focus on the chromosomal activity during each phase
         </p>
         {#if questionType === "MCQ"}
-            {#each ["Prophase", "Metaphase", "Anaphase", "Telophase"] as option}
+            <!-- {#each ["Prophase", "Metaphase", "Anaphase", "Telophase"] as option}
                 <label class="option">
                     <input type="checkbox" name="" id="" checked />
                     <p>{option}</p>
                 </label>
-            {/each}
+            {/each} -->
+            <div class="space-y-6">
+                <Editor />
+
+                <div class="border border-neutral-300 h-32 lg:h-64 flex items-center justify-center flex-col text-center">
+                    <IconFileUploadFilled class="size-8 text-neutral-500"/>
+                    <p class="text-neutral-500 uppercase text-sm md:text-base">Or upload your answer document</p>
+                    <p class="text-xs md:text-sm text-neutral-400 font-mono">PDF, DOCX up to 10MB</p>
+                </div>
+            </div>
         {:else}
             <textarea
                 placeholder="Draft your answer here"
