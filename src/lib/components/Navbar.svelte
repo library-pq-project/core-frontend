@@ -10,7 +10,7 @@
 
 {#snippet links()}
     <li><a href="/studio">Studio</a></li>
-    <li><a href="/repo">Repository</a></li>
+    <li><a href="/admin">Dashboard</a></li>
 {/snippet}
 
 <nav class="navbar">

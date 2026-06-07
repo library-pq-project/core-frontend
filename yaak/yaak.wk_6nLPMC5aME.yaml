@@ -1,0 +1,15 @@
+type: workspace
+model: workspace
+id: wk_6nLPMC5aME
+createdAt: 2026-05-06T11:42:50.268209400
+updatedAt: 2026-05-06T11:42:50.268210500
+authentication: {}
+authenticationType: null
+description: ''
+headers: []
+name: Academica
+encryptionKeyChallenge: null
+settingValidateCertificates: true
+settingFollowRedirects: true
+settingRequestTimeout: 0
+settingDnsOverrides: []
