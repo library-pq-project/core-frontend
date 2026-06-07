@@ -6,11 +6,11 @@ import Loading from "./pages/Loading.svelte";
 import Course from "./pages/Course.svelte"
 import Dashboard from "./pages/Dashboard.svelte";
 
-export const { } = createRouter({
+export const { route } = createRouter({
     "/qu": Question,
     "/studio": Studio,
     "/": Home,
     "/loading": Loading,
-    "/course": Course,
+    "/course/:id": Course,
     "/admin": Dashboard
 })

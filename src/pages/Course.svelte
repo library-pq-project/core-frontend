@@ -5,6 +5,9 @@
     import IconReload from "~icons/tabler/reload";
     import IconCircleCheck from "~icons/tabler/circle-check";
     import IconUsersGroup from "~icons/tabler/users-group";
+
+    import { route } from "../router";
+    let id = $state(route.getParams("/course/:id").id);
 </script>
 
 <div class="flex items-center gap-4 font-mono">
@@ -23,16 +26,12 @@
         <div class="p-3 bg-accent rounded-full w-fit">
             <IconStarFilled class="size-8" />
         </div>
-        <p class="text-neutral-400 uppercase font-mono">
-            Course Difficulty
-        </p>
+        <p class="text-neutral-400 uppercase font-mono">Course Difficulty</p>
         <p class="text-3xl italic font-serif">High/Advanced</p>
     </div>
     <div class="border border-primary p-8 space-y-3">
         <IconUsersGroup class="size-12" />
-        <p class="text-neutral-500 uppercase font-mono">
-            Enrolled Students
-        </p>
+        <p class="text-neutral-500 uppercase font-mono">Enrolled Students</p>
         <p class="text-3xl italic font-serif">142</p>
     </div>
     <div class="border border-primary p-8 space-y-3">
