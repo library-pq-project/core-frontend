@@ -5,6 +5,7 @@ import Question from "./pages/Question.svelte";
 import Loading from "./pages/Loading.svelte";
 import Course from "./pages/Course.svelte"
 import Dashboard from "./pages/Dashboard.svelte";
+import Assessment from "./pages/Assessment.svelte";
 
 export const { route } = createRouter({
     "/qu": Question,
@@ -12,5 +13,6 @@ export const { route } = createRouter({
     "/": Home,
     "/loading": Loading,
     "/course/:id": Course,
-    "/admin": Dashboard
+    "/admin": Dashboard,
+    "/assessment": Assessment
 })

@@ -65,7 +65,7 @@
 <style>
     @reference "../app.css";
     .courses-grid {
-        @apply grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 md:gap-8 place-items-center gap-4;
+        @apply grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 md:gap-8 gap-4;
     }
 
     .top-section {
