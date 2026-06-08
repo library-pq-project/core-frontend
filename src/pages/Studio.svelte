@@ -15,17 +15,17 @@
 
 <section class="flex flex-col lg:flex-row gap-lg">
     <div
-        class="bg-surface border-border border flex flex-col items-center py-20 gap-md p-4"
+        class="upload-container"
     >
         <div>
             <IconUpload class="text-muted size-8" />
         </div>
         <p class="text-xl md:text-2xl font-reading font-bold text-center">
-            Drag and Drop Lecture Materials
+            Drag and Drop Lecture Material
         </p>
         <p class="max-w-6/12 text-center text-xs lg:text-sm text-muted">
-            Accepts highly detailed PDF or TXT files up to 50MB. Text is
-            automatically parsed and structured
+            Accepts highly detailed PDF or TXT file up to 50MB. Text is
+            automatically parsed and structured.
         </p>
         <button class="btn-outline uppercase"> Browse Local Files </button>
     </div>
@@ -87,6 +87,10 @@
     }
 
     .parameter-card {
-        @apply bg-surface border-border border max-w-112  lg:w-112 p-4 md:p-8 space-y-lg;
+        @apply bg-surface border-neutral-400 border max-w-112  lg:w-112 p-4 md:p-8 space-y-lg;
+    }
+
+    .upload-container {
+        @apply bg-surface border-neutral-400 border-2 border-dashed flex flex-col items-center py-20 gap-md p-4;
     }
 </style>

@@ -1,7 +1,23 @@
 <script lang="ts">
+    import { onMount } from "svelte";
     import IconPlus from "~icons/tabler/plus";
     import CourseCard from "../lib/components/CourseCard.svelte";
     import CourseInfo from "../lib/components/CourseInfo.svelte";
+    import { fetchCourses } from "../lib/utils/api";
+    import type { Course } from "../lib/utils/types";
+
+    let courses: Course[] = $state([]);
+    let loading = $state(true);
+
+    onMount(async () => {
+        try {
+            courses = await fetchCourses();
+        } catch (e) {
+            console.error("Failed to load courses", e);
+        } finally {
+            loading = false;
+        }
+    });
 </script>
 
 <section class="top-section">
@@ -23,11 +39,17 @@
 <section class="mb-24">
     <p class="section-heading mb-8">Active Courses</p>
 
-    <div class="courses-grid">
-        {#each { length: 1 }}
-            <CourseCard />
-        {/each}
-    </div>
+    {#if loading}
+        <p class="text-muted font-mono text-sm uppercase tracking-wide">Loading courses…</p>
+    {:else if courses.length === 0}
+        <p class="text-muted font-mono text-sm">No courses found.</p>
+    {:else}
+        <div class="courses-grid">
+            {#each courses as course (course.id)}
+                <CourseCard {course} />
+            {/each}
+        </div>
+    {/if}
 </section>
 
 <section>
