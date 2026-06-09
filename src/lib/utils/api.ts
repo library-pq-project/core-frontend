@@ -1,4 +1,4 @@
-import type { Course, Assessment,  AssessmentInfo, StartAssessment, QuizQuestions } from './types';
+import { type Course, type Assessment, type AssessmentInfo, type StartAssessment, type QuizQuestions, type QuizResponseItem, type SubmittedAttemptStatus, type AttemptGrades } from './types';
 
 const BASE_URL: string = import.meta.env.SERVER_URL || '';
 
@@ -52,4 +52,20 @@ export function startAssessment(assessmentid: number, data: StartAssessmentPostP
 
 export function getQuizInfoFromAttempt(attemptId: string) {
     return apiFetch<QuizQuestions>(`/api/quiz-attempts/${attemptId}/questions?skip=0&limit=20`)
+}
+
+interface QuizInfo {
+    quizId: string | number;
+    attemptId: string;
+}
+
+export function submitAttempt(response: { responses: QuizResponseItem[] }, quizInfo: QuizInfo) {
+    const requestOptions = { method: "POST", body: JSON.stringify(response), headers: { "Content-Type": "application/json" } }
+
+    return apiFetch<SubmittedAttemptStatus>(`/api/quizzes/${quizInfo.quizId}/attempts/${quizInfo.attemptId}/submit`, requestOptions)
+}
+
+export function gradeAssessment(quizInfo: QuizInfo) {
+    const requestOptions = { method: "POST" }
+    return apiFetch<AttemptGrades>(`/api/quizzes/${quizInfo.quizId}/attempts/${quizInfo.attemptId}/grade`, requestOptions)
 }

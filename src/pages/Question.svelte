@@ -2,8 +2,12 @@
     import Editor from "../lib/components/Editor.svelte";
     import IconArrowLeft from "~icons/tabler/arrow-left";
     import IconFileUploadFilled from "~icons/tabler/file-upload-filled";
-    import { route } from "../router";
-    import { getQuizInfoFromAttempt } from "../lib/utils/api";
+    import { navigate, route } from "../router";
+    import {
+        getQuizInfoFromAttempt,
+        gradeAssessment,
+        submitAttempt,
+    } from "../lib/utils/api";
     import { onMount } from "svelte";
     import type { QuizQuestions, QuizResponseItem } from "../lib/utils/types";
     import { fly } from "svelte/transition";
@@ -33,6 +37,26 @@
             transitionDirection = "forward";
             currentPosition++;
         }
+    }
+
+    function submit() {
+        const quizInfo = {
+            attemptId: id!,
+            quizId: id!,
+        };
+
+        function navigateToResultId() {
+            navigate("/report/:id", { params: { id: id! } });
+        }
+
+        if (!quizQuestions) return;
+        submitAttempt({ responses: attemptResponses }, quizInfo)
+            .then(function () {
+                gradeAssessment(quizInfo).then(navigateToResultId);
+            })
+            .catch(function () {
+                gradeAssessment(quizInfo).then(navigateToResultId);
+            });
     }
 
     function onChooseOption(event: Event) {
@@ -162,11 +186,18 @@
                     onclick={moveBackward}
                     disabled={currentPosition == 1}>Previous</button
                 >
-                <button
-                    class="btn-primary"
-                    onclick={moveForward}
-                    disabled={currentPosition == quizLength}>Next</button
-                >
+
+                {#if currentPosition == quizLength}
+                    <button class="btn-primary" onclick={submit}
+                        >Submit Attempt</button
+                    >
+                {:else}
+                    <button
+                        class="btn-primary"
+                        onclick={moveForward}
+                        disabled={currentPosition == quizLength}>Next</button
+                    >
+                {/if}
             </div>
         </div>
     </section>

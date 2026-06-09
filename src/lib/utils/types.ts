@@ -108,3 +108,26 @@ export interface QuizResponseItem {
   selected_quiz_question_option_id: number | null; 
   answer_text: string | null;
 }
+
+export interface SubmittedAttemptStatus {
+  id: number;
+  quiz_id: number;
+  user_id: number;
+  attempt_number: number;
+  status: string;
+  started_at: string;
+  expected_end_at: string;
+  submitted_at: string;
+  duration_used_seconds: number;
+  selected_duration_minutes: number;
+  graded_at: null;
+}
+
+export interface AttemptGrades {
+  attempt_id: number;
+  quiz_id: number;
+  graded: boolean;
+  total_score: number;
+  max_score: number;
+  percentage_score: number;
+}
