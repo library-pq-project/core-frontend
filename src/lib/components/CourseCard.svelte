@@ -21,7 +21,7 @@
     </div>
 
     <a href="/course/{course.id}" aria-label="Open {course.code}" class="card-link"> </a>
-</article>
+</article> 
 
 <style>
     @reference "../../app.css";

@@ -41,12 +41,12 @@ body {
 }
 
 .btn-outline {
-  @apply font-semibold border px-4 py-2 tracking-wide text-sm items-center cursor-pointer hover:bg-background-hover transition-colors focus:outline-0 focus:ring-2 focus:ring-offset-1 inline-flex gap-2;
+  @apply font-semibold border px-4 py-2 tracking-wide text-sm items-center cursor-pointer hover:bg-background-hover transition-colors focus:outline-0 focus:ring-2 focus:ring-offset-1 inline-flex gap-2 disabled:opacity-70 disabled:cursor-not-allowed;
 }
 
 .btn-primary {
   @apply tracking-wide bg-primary text-background px-4 py-3 inline-flex items-center 
-  gap-2 text-sm justify-center hover:bg-primary-hover transition-colors cursor-pointer focus:outline-0 focus:ring-2 focus:ring-primary-hover focus:ring-offset-1;
+  gap-2 text-sm justify-center hover:bg-primary-hover transition-colors cursor-pointer focus:outline-0 focus:ring-2 focus:ring-primary-hover focus:ring-offset-1 disabled:opacity-70 disabled:cursor-not-allowed;
 }
 
 .btn-ghost {
@@ -58,7 +58,7 @@ select {
   @apply border px-4 py-2 focus:outline-0 focus:ring-2 focus:ring-offset-1;
 }
 
-input[type=checkbox] {
+input[type=radio] {
   appearance: none;
   width: 20px;
   height: 20px;

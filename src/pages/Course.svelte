@@ -153,7 +153,7 @@
                             </span>
                         </td>
                         <td class="px-6 py-5 text-right">
-                            <button class="btn btn-outline"><IconReload /> Practice</button>
+                            <a href="/assessment/{assessment.id}" class="btn btn-outline"><IconReload /> Practice</a>
                         </td>
                     </tr>
                 {/each}
@@ -178,9 +178,9 @@
                         </p>
                     </div>
                     <div class="flex items-center gap-4">
-                        <div class="btn btn-outline">
+                        <a href="/assessment/{assessment.id}" class="btn btn-outline">
                             <IconReload /> Practice
-                        </div>
+                        </a>
                     </div>
                 </li>
             {/each}

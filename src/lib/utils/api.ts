@@ -1,4 +1,4 @@
-import type { Course, Assessment } from './types';
+import type { Course, Assessment,  AssessmentInfo, StartAssessment, QuizQuestions } from './types';
 
 const BASE_URL: string = import.meta.env.SERVER_URL || '';
 
@@ -32,4 +32,24 @@ export async function fetchCourse(id: number): Promise<Course> {
 export function fetchAssessments(courseId?: number): Promise<Assessment[]> {
     const params = courseId != null ? `?course_id=${courseId}` : '';
     return apiFetch<Assessment[]>(`/api/assessments${params}`);
+}
+
+export function fetchAssessmentInfo(assessmentid: number): Promise<AssessmentInfo> {
+    return apiFetch<AssessmentInfo>(`/api/assessments/${assessmentid}/practice-config`)
+}
+
+interface StartAssessmentPostParams {
+    desired_question_count: string
+    selected_topic_ids: number[]
+    selected_duration_minutes: string;
+    reveal_answers_post_submit: boolean
+}
+
+export function startAssessment(assessmentid: number, data: StartAssessmentPostParams): Promise<StartAssessment> {
+    const requestOptions = { method: "POST", body: JSON.stringify(data), headers: { "Content-Type": "application/json" } }
+    return apiFetch<StartAssessment>(`/api/assessments/${assessmentid}/practice/start`, requestOptions)
+}
+
+export function getQuizInfoFromAttempt(attemptId: string) {
+    return apiFetch<QuizQuestions>(`/api/quiz-attempts/${attemptId}/questions?skip=0&limit=20`)
 }
