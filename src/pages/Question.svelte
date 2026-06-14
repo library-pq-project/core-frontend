@@ -42,7 +42,7 @@
     function submit() {
         const quizInfo = {
             attemptId: id!,
-            quizId: id!,
+            quizId: String(parseInt(id!)  - 1), //XXX This is a patch.
         };
 
         function navigateToResultId() {

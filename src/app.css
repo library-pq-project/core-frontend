@@ -34,8 +34,6 @@
   --spacing-xl: 96px;
 }
 
-
-
 body {
   @apply bg-background text-text;
 }
